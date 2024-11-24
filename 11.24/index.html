@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排版助手</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrsasign/10.5.27/jsrsasign-all-min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧文本输入区域 -->
+        <div class="left-panel">
+            <div class="text-controls">
+                <button id="importBtn">导入文件</button>
+                <button id="exportBtn">导出文件</button>
+                <input type="file" id="fileInput" style="display: none" accept=".txt">
+            </div>
+            <div class="section-title">原文</div>
+            <textarea 
+                id="textInput" 
+                placeholder="请在此输入文本或粘贴内容"
+                spellcheck="false"
+            ></textarea>
+            <div class="text-stats">
+                <span id="wordCount">字数：0</span>
+                <span id="lineCount">行数：0</span>
+            </div>
+            <div class="section-title">已排版</div>
+            <div id="preview" class="preview">
+                <!-- 实时预览区域 -->
+            </div>
+        </div>
+
+        <!-- 右侧对话区域 -->
+        <div class="right-panel">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h3>排版助手</h3>
+                    <button id="clearChat">清空对话</button>
+                </div>
+                <div id="chatHistory" class="chat-history">
+                    <!-- 聊天记录将在这里显示 -->
+                </div>
+                <div class="chat-input-container">
+                    <input 
+                        type="text" 
+                        id="chatInput" 
+                        placeholder="输入您的指令..."
+                    >
+                    <button id="sendButton">发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
